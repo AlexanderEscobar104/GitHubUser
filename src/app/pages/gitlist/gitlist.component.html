@@ -1,0 +1,86 @@
+<div class="center">
+    <div style="display: flex; justify-content: center;">
+        <ion-label style="font-size: 30px;"> Find GitHub User</ion-label>
+    </div>
+    <ion-searchbar [(ngModel)]="user" (ionInput)="findUser()" placeholder="Search for a place">
+    </ion-searchbar>
+    <ion-card class="card" *ngIf="existeUser && user ">
+        <ion-grid class="additional">
+            <ion-row>
+                <ion-col size="4" class="user-card ">
+                    <ion-grid>
+                        <ion-row style="padding: 10px;">
+                            <ion-col class="points">
+                                <ion-label> {{this.gitUser.login}} </ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row style="padding-top: 35px;padding-bottom: 35px;">
+                            <ion-col>
+                                <div style="display: flex; justify-content: center;">
+                                    <ion-avatar>
+                                        <img alt="" style="width: 80px; height: 80px;"
+                                            [src]="this.gitUser.avatar_url" />
+                                    </ion-avatar>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row style="padding: 10px;">
+                            <ion-col class="points">
+                                <ion-label> {{this.gitUser.created_at | date : 'yyyy-MMM-dd'}} </ion-label>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+                <ion-col size="8">
+                    <ion-grid class="coords">
+                        <ion-row>
+                            <ion-col>
+                                <ion-label> {{this.gitUser.name}} </ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row style="padding-top: 20px;">
+                            <ion-col>
+
+                                <img alt="" style="width: 10px; height: 10px;"
+                                    src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/38.Location-Pin-512.png" />
+                                <ion-label> {{this.gitUser.location}} </ion-label>
+                            </ion-col>
+                            <ion-col>
+                                <img alt="" style="width: 10px; height: 10px;"
+                                    src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-twitter-outline-512.png" />
+                                <ion-label> {{this.gitUser.twitter_username}} </ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row style="padding-top: 20px;">
+                            <ion-col>
+                                <img alt="" style="width: 10px; height: 10px;"
+                                    src="https://cdn1.iconfinder.com/data/icons/line-awesome-vol-1/32/blog-solid-512.png" />
+                                <ion-label> {{this.gitUser.blog}} </ion-label>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row style="padding-top: 10px;">
+                            <ion-col>
+                                <img alt="" style="width: 50px; height: 50px;"
+                                    src="https://thenounproject.com/api/private/icons/1561897/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkYB_WhxXo-auVG-ii7cOCUo--dUiQldRUnVBNBFBLKd0AT8ZEJzjsoMctz2mWk4E63dLuMWyFSce4TYUgmqQdIxQB-g%3D%3D" />
+                                <br>
+                                <ion-label> {{this.gitUser.public_repos}} </ion-label>
+                            </ion-col>
+                            <ion-col>
+                                <img alt="" style="width: 50px; height: 50px;"
+                                    src="https://thenounproject.com/api/private/icons/5005690/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkYB_WhxXo-auVG-ii7cOCUo--dUiQldRUnVBNBFBLKd0AT8ZEJzjsoMctz2mWk4E63dLuMWyFSce4TYUgmqQdIxQB-g%3D%3D" />
+                                <br>
+                                <ion-label> {{this.gitUser.followers}} </ion-label>
+                            </ion-col>
+                            <ion-col>
+                                <img alt="" style="width: 50px; height: 50px;"
+                                    src="https://thenounproject.com/api/private/icons/108059/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABkYB_WhxXo-auVG-ii7cOCUo--dUiQldRUnVBNBFBLKd0AT8ZEJzjsoMctz2mWk4E63dLuMWyFSce4TYUgmqQdIxQB-g%3D%3D" />
+                                <br>
+                                <ion-label> {{this.gitUser.following}} </ion-label>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</div>
